@@ -45,7 +45,7 @@ export default function Home({user}) {
                             </HStack>
 
                         </Box>
-                        <HStack width={'100%'} bg={'red'}>
+                        <HStack width={'100%'} bg={''}>
 
                             <Box width={'50%'}>
                                 <Center>
