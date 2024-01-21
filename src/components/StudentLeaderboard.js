@@ -40,7 +40,7 @@ export default function StudentLeaderboard() {
         return profiles;
     };
     return (
-        <Box color={'brand.900'} width={'100%'} fontSize={'24px'}>
+        <Box pt={10} color={'brand.900'} width={'100%'} fontSize={'24px'}>
 
             <Center width={'100%'}>
                 <VStack width={'100%'}>

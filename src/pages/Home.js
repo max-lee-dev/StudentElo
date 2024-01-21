@@ -89,29 +89,32 @@ export default function Home({user}) {
                             </HStack>
 
                         </Box>
-                        <HStack width={'100%'} bg={''} pt={10}>
+                        <HStack width={'100%'} bg={''} spacing={0} pt={10}>
 
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button width={200} borderColor={'brand.900'} borderWidth={'2px'}
+                                    <Button width={'60%'} borderColor={'brand.900'} borderWidth={'2px'}
                                             onClick={() => handleClick(1)}>
                                         Student 1
                                     </Button>
                                 </Center>
                             </Box>
+                            <Button width={'20%'} onClick={getNewUsers} color={'black'} borderColor={'brand.900'}
+                                    borderWidth={'2px'}
+                                    bg={'brand.100'}
+                                    variant="solid">
+                                draw
+                            </Button>
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button width={200} borderColor={'brand.900'} borderWidth={'2px'}
+                                    <Button width={'60%'} borderColor={'brand.900'} borderWidth={'2px'}
                                             onClick={() => handleClick(2)}>
                                         Student 2
                                     </Button>
                                 </Center>
                             </Box>
                         </HStack>
-                        <Button onClick={getNewUsers} color={'black'} borderC bg={'brand.100'} width={'100px'}
-                                variant="solid">
-                            draw
-                        </Button>
+
 
                     </VStack>
                 </Box>
