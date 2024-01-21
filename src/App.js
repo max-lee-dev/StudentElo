@@ -4,6 +4,7 @@ import LogIn from "./pages/LogIn";
 import Navbar from "./components/Navbar";
 import Create from "./pages/Create";
 
+import StudentLeaderboard from "./components/StudentLeaderboard";
 import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
 import {ChakraProvider, Box, extendTheme} from "@chakra-ui/react";
 import {db} from "./Firebase/firebase";
@@ -74,6 +75,7 @@ function App() {
                             <Route path="/" element={<Home user={user}/>}/>
                             <Route path="/login" element={<LogIn/>}/>
                             <Route path="/create" element={<Create user={user}/>}/>
+                            <Route path={"/leaderboard/students"} element={<StudentLeaderboard/>}/>
 
                         </Routes>
                     </Box>

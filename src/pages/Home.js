@@ -6,9 +6,14 @@ import {
     Text,
     VStack,
     HStack,
+    useDisclosure,
 } from "@chakra-ui/react";
 import {getTwoRandomProfiles} from "../Firebase/getTwoRandomProfiles";
 import UserProfile from "../components/UserProfile";
+import {calculateChange} from "../components/calculateChange";
+import {updateElo} from "../Firebase/updateElo";
+import FinishedModal from "../components/FinishedModal";
+
 
 import {auth} from "../Firebase/firebase";
 
@@ -16,6 +21,16 @@ export default function Home({user}) {
     const [user1, setUser1] = useState({});
     const [user2, setUser2] = useState({});
     const [loading, setLoading] = useState(true);
+    const [oldElo1, setOldElo1] = useState(0);
+    const [oldElo2, setOldElo2] = useState(0);
+    const [newElo1, setNewElo1] = useState(0);
+    const [newElo2, setNewElo2] = useState(0);
+    const {
+        isOpen: isOpenFinishedModal,
+        onOpen: onOpenFinishedModal,
+        onClose: onCloseFinishedModal
+    } = useDisclosure();
+
 
     function getNewUsers() {
         setLoading(true);
@@ -29,6 +44,23 @@ export default function Home({user}) {
     useEffect(() => {
         getNewUsers();
     }, []);
+
+
+    function handleClick(winner) {
+        console.log("test")
+        console.log(user1.elo, user2.elo, winner, user1.uid)
+
+        setOldElo1(user1.elo);
+        setOldElo2(user2.elo);
+        const [newElo1, newElo2] = calculateChange(user1.elo, user2.elo, winner);
+        setNewElo1(newElo1);
+        setNewElo2(newElo2);
+        updateElo(user1.uid, newElo1).then(r => console.log(r));
+        updateElo(user2.uid, newElo2).then(r => console.log(r));
+        onOpenFinishedModal();
+
+
+    }
 
 
     return (
@@ -49,14 +81,14 @@ export default function Home({user}) {
 
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button>
+                                    <Button onClick={() => handleClick(1)}>
                                         student 1
                                     </Button>
                                 </Center>
                             </Box>
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button>
+                                    <Button onClick={() => handleClick(2)}>
                                         student 2
                                     </Button>
                                 </Center>
@@ -71,6 +103,9 @@ export default function Home({user}) {
                     </VStack>
                 </Box>
             </Center>
+            <FinishedModal isOpen={isOpenFinishedModal} onClose={onCloseFinishedModal} oldElo1={oldElo1}
+                           newElo1={newElo1} newElo2={newElo2}
+                           oldElo2={oldElo2}/>
         </Box>
     );
 }

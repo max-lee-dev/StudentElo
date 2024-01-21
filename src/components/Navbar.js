@@ -68,7 +68,7 @@ export default function Navbar({userData, updatedConfig}) {
 
 
                             <Box>
-                                <NavLink to="/about">&lt;about&gt;</NavLink>
+                                <NavLink to="/leaderboard/students">&lt;student leaderboard&gt;</NavLink>
                             </Box>
 
                             <Box>

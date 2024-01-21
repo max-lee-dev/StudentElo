@@ -39,7 +39,7 @@ export default function UserProfile({thisUser}) {
                     </Text>
                     <HStack>
                         <Text>
-                            {thisUser.GPA}
+                            {thisUser.elo}
                         </Text>
                         <Text>
                             {thisUser.SAT}
