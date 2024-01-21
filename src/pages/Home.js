@@ -89,25 +89,27 @@ export default function Home({user}) {
                             </HStack>
 
                         </Box>
-                        <HStack width={'100%'} bg={''}>
+                        <HStack width={'100%'} bg={''} pt={10}>
 
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button onClick={() => handleClick(1)}>
-                                        student 1
+                                    <Button width={200} borderColor={'brand.900'} borderWidth={'2px'}
+                                            onClick={() => handleClick(1)}>
+                                        Student 1
                                     </Button>
                                 </Center>
                             </Box>
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button onClick={() => handleClick(2)}>
-                                        student 2
+                                    <Button width={200} borderColor={'brand.900'} borderWidth={'2px'}
+                                            onClick={() => handleClick(2)}>
+                                        Student 2
                                     </Button>
                                 </Center>
                             </Box>
                         </HStack>
                         <Button onClick={getNewUsers} colorScheme="blue" variant="solid">
-                            skip
+                            draw
                         </Button>
                         <Text>
                             logged in as {user?.displayName}
