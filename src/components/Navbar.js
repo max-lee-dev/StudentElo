@@ -44,7 +44,7 @@ export default function Navbar({userData, updatedConfig}) {
                     <Box pl={[4, 0, 0, 0]} className="Logo whiteText" fontWeight="500">
                         <HStack>
                             <NavLink onClick={changeLocation} to="/" className="site-title">
-                                <Text fontSize={'40px'} fontWeight={600}>
+                                <Text fontSize={'36px'} fontWeight={600}>
                                     Student ELO
                                 </Text>
                             </NavLink>
