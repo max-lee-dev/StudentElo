@@ -55,6 +55,7 @@ export default function Create({user}) {
     const [EC10Role, setEC10Role] = useState("");
     const [EC10Description, setEC10Description] = useState("");
     const [numECs, setNumECs] = useState(1);
+    const [APs, setAPs] = useState(0);
 
 
     function create() {
@@ -71,15 +72,7 @@ export default function Create({user}) {
             EC2Description: EC2Description,
             EC3Name: EC3Name,
             EC3Role: EC3Role,
-            EC3Description: EC3Description,
-            EC4Name: EC4Name,
-            EC4Role: EC4Role,
-            EC4Description: EC4Description,
-            EC5Name: EC5Name,
-            EC5Role: EC5Role,
-            EC5Description: EC5Description,
-            EC6Name: EC6Name,
-            EC6Role: EC6Role,
+            APs: APs,
 
 
         }).then(() => {
@@ -190,6 +183,25 @@ export default function Create({user}) {
                                     <option value={"3.0-3.5"}>3.0-3.5</option>
                                     <option value={"3.5-4.0"}>3.5-4.0</option>
 
+                                </Select>
+                            </FormControl>
+
+                        </Box>
+                        <Box>
+                            <FormControl id="APs">
+                                <FormLabel>APs</FormLabel>
+                                <Select minW={'100px'} placeholder="APs" onChange={(e) => setAPs(e.target.value)}>>
+                                    <option value={"0"}>0</option>
+                                    <option value={"1"}>1</option>
+                                    <option value={"2"}>2</option>
+                                    <option value={"3"}>3</option>
+                                    <option value={"4"}>4</option>
+                                    <option value={"5"}>5</option>
+                                    <option value={"6"}>6</option>
+                                    <option value={"7"}>7</option>
+                                    <option value={"8"}>8</option>
+                                    <option value={"9"}>9</option>
+                                    <option value={"10"}>10</option>
                                 </Select>
                             </FormControl>
 

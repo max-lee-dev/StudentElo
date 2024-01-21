@@ -43,7 +43,25 @@ export default function Home({user}) {
 
 
                             </HStack>
+
                         </Box>
+                        <HStack width={'100%'} bg={'red'}>
+
+                            <Box width={'50%'}>
+                                <Center>
+                                    <Button>
+                                        student 1
+                                    </Button>
+                                </Center>
+                            </Box>
+                            <Box width={'50%'}>
+                                <Center>
+                                    <Button>
+                                        student 2
+                                    </Button>
+                                </Center>
+                            </Box>
+                        </HStack>
                         <Button onClick={getNewUsers} colorScheme="blue" variant="solid">
                             skip
                         </Button>

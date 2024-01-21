@@ -6,7 +6,7 @@ export const createUserProfileDocument = async (user, additionalData) => {
     if (!user) return;
 
     // const userRef = firestore.doc(`users/${userAuth.uid}`);
-    const profileRef = doc(db, "profiles", user.uid);
+    const profileRef = doc(db, "profiles", "hiwen6");
 
     const snapShot = await getDoc(profileRef);
 
@@ -20,6 +20,7 @@ export const createUserProfileDocument = async (user, additionalData) => {
         elo: 1000, // default elo
         ...additionalData
     };
+
 
     try {
         await setDoc(profileRef, userSettings);
