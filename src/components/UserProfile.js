@@ -37,17 +37,20 @@ export default function UserProfile({thisUser}) {
                     <Text fontSize={'24px'}>
                         {convertGrade(thisUser.grade)}
                     </Text>
-                    <HStack>
+                    <VStack>
                         <Text>
-                            {thisUser.elo}
+                            GPA: {thisUser.GPA}
                         </Text>
                         <Text>
-                            {thisUser.SAT}
+                            SAT: {thisUser.SAT}
                         </Text>
                         <Text>
-                            {thisUser.ACT}
+                            ACT: {thisUser.ACT}
                         </Text>
-                    </HStack>
+                        <Text>
+                            APs: {thisUser.APs}
+                        </Text>
+                    </VStack>
                     <ActivityCard name={thisUser.EC1Name} role={thisUser.EC1Role}
                                   description={thisUser.EC1Description}/>
                     <ActivityCard name={thisUser.EC2Name} role={thisUser.EC2Role}

@@ -40,24 +40,28 @@ export default function StudentLeaderboard() {
         return profiles;
     };
     return (
-        <Box color={'brand.900'} width={'100%'}>
-            <Text widrh>
-                HI
-            </Text>
+        <Box color={'brand.900'} width={'100%'} fontSize={'24px'}>
+           
             <Center width={'100%'}>
                 <VStack width={'100%'}>
                     <Box width={'60%'} bg={'#DDD3E4'}>
-                        <HStack>
-                            <Text width={'10%'}>Rank</Text>
-                            <Text>Name</Text>
-                            <Text>Elo</Text>
+                        <HStack fontWeight={800}>
+                            <Text width={'20%'}>Rank</Text>
+                            <Text width={'20%'}>Grade</Text>
+                            <Text width={'20%'}>GPA</Text>
+                            <Text width={'20%'}>APs</Text>
                         </HStack>
                     </Box>
                     <VStack width={'100%'}>
                         {profiles.map((profile,) => (
 
                             <Box bg={'#DDD3E4'} width={'60%'} h={'100px'}>
-                                <Text>{profile.elo}</Text>
+                                <HStack>
+                                    <Text width={'20%'}>{profile.elo}</Text>
+                                    <Text width={'20%'}>{profile.grade}</Text>
+                                    <Text width={'20%'}>{profile.GPA}</Text>
+                                    <Text width={'20%'}>{profile.APs}</Text>
+                                </HStack>
                             </Box>
                         ))}
                     </VStack>

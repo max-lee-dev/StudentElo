@@ -25,6 +25,7 @@ export default function Home({user}) {
     const [oldElo2, setOldElo2] = useState(0);
     const [newElo1, setNewElo1] = useState(0);
     const [newElo2, setNewElo2] = useState(0);
+    const [isCorrect, setIsCorrect] = useState(false);
     const {
         isOpen: isOpenFinishedModal,
         onOpen: onOpenFinishedModal,
@@ -49,7 +50,14 @@ export default function Home({user}) {
     function handleClick(winner) {
         console.log("test")
         console.log(user1.elo, user2.elo, winner, user1.uid)
-
+        if (user1.elo > user2.elo && winner === 1) {
+            setIsCorrect(true);
+        } else if (user2.elo > user1.elo && winner === 2) {
+            setIsCorrect(true);
+        } else {
+            setIsCorrect(false);
+        }
+        console.log(isCorrect)
         setOldElo1(user1.elo);
         setOldElo2(user2.elo);
         const [newElo1, newElo2] = calculateChange(user1.elo, user2.elo, winner);
@@ -57,7 +65,9 @@ export default function Home({user}) {
         setNewElo2(newElo2);
         updateElo(user1.uid, newElo1).then(r => console.log(r));
         updateElo(user2.uid, newElo2).then(r => console.log(r));
+
         onOpenFinishedModal();
+        getNewUsers();
 
 
     }
@@ -105,7 +115,9 @@ export default function Home({user}) {
             </Center>
             <FinishedModal isOpen={isOpenFinishedModal} onClose={onCloseFinishedModal} oldElo1={oldElo1}
                            newElo1={newElo1} newElo2={newElo2}
-                           oldElo2={oldElo2}/>
+                           oldElo2={oldElo2}
+                           correct={isCorrect}
+            />
         </Box>
     );
 }

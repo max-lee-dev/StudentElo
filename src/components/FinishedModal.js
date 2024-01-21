@@ -13,12 +13,12 @@ import {
     Box,
 } from "@chakra-ui/react";
 
-export default function FinishedModal({isOpen, onClose, oldElo1, oldElo2, newElo1, newElo2}) {
+export default function FinishedModal({isOpen, onClose, oldElo1, oldElo2, newElo1, newElo2, isCorrect}) {
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent>
-                <ModalHeader>Match complete</ModalHeader>
+                <ModalHeader>{isCorrect ? "Correct!" : "Incorrect!"}</ModalHeader>
                 <ModalCloseButton/>
                 <ModalBody>
                     <Text>Player 1 elo: {oldElo1} -> {newElo1}</Text>
