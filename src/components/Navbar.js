@@ -33,8 +33,9 @@ export default function Navbar({userData, updatedConfig}) {
 
     //eslint-disable-next-line
     return (
-        <Box as={'nav'} bgColor={'coral'} width={['150vw', '100%', '100%', '100%']}
+        <Box as={'nav'} bgColor={'transparent'} width={['150vw', '100%', '100%', '100%']}
              className="nav"
+             color="brand.900"
         >
             <Box display={'flex'} justifyContent={['initial', 'center', 'center', 'center']}>
                 <Box display={'flex'} width={['70%', '90%', '90%', '70%']} justifyContent={'space-between'}>
@@ -42,8 +43,8 @@ export default function Navbar({userData, updatedConfig}) {
                     <Box pl={[4, 0, 0, 0]} className="Logo whiteText" fontWeight="500">
                         <HStack>
                             <NavLink onClick={changeLocation} to="/" className="site-title">
-                                <Text>
-                                    logo
+                                <Text fontSize={'40px'} fontWeight={600}>
+                                    Student ELO
                                 </Text>
                             </NavLink>
                         </HStack>

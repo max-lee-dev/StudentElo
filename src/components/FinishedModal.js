@@ -18,7 +18,7 @@ export default function FinishedModal({isOpen, onClose, oldElo1, oldElo2, newElo
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent>
-                <ModalHeader>{isCorrect ? "Correct!" : "Incorrect!"}</ModalHeader>
+                <ModalHeader>{isCorrect === undefined ? "Correct!" : "Incorrect!"}</ModalHeader>
                 <ModalCloseButton/>
                 <ModalBody>
                     <Text>Player 1 elo: {oldElo1} -> {newElo1}</Text>

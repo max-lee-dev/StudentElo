@@ -49,15 +49,17 @@ export default function Home({user}) {
 
     function handleClick(winner) {
         console.log("test")
+
         console.log(user1.elo, user2.elo, winner, user1.uid)
         if (user1.elo > user2.elo && winner === 1) {
+
             setIsCorrect(true);
         } else if (user2.elo > user1.elo && winner === 2) {
             setIsCorrect(true);
         } else {
             setIsCorrect(false);
         }
-        console.log(isCorrect)
+        console.log("correct?: " + isCorrect)
         setOldElo1(user1.elo);
         setOldElo2(user2.elo);
         const [newElo1, newElo2] = calculateChange(user1.elo, user2.elo, winner);
