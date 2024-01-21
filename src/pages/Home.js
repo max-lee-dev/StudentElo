@@ -108,12 +108,11 @@ export default function Home({user}) {
                                 </Center>
                             </Box>
                         </HStack>
-                        <Button onClick={getNewUsers} colorScheme="blue" variant="solid">
+                        <Button onClick={getNewUsers} color={'black'} borderC bg={'brand.100'} width={'100px'}
+                                variant="solid">
                             draw
                         </Button>
-                        <Text>
-                            logged in as {user?.displayName}
-                        </Text>
+
                     </VStack>
                 </Box>
             </Center>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
-
+import {auth} from "../Firebase/firebase";
 
 import {
     Menu,
@@ -36,6 +36,7 @@ export default function Navbar({userData, updatedConfig}) {
         <Box as={'nav'} bgColor={'transparent'} width={['150vw', '100%', '100%', '100%']}
              className="nav"
              color="brand.900"
+             bg={'brand.100'}
         >
             <Box display={'flex'} justifyContent={['initial', 'center', 'center', 'center']}>
                 <Box display={'flex'} width={['70%', '90%', '90%', '70%']} justifyContent={'space-between'}>
@@ -53,35 +54,26 @@ export default function Navbar({userData, updatedConfig}) {
                     <Box fontWeight={"500"} display={['flex']}>
                         <HStack>
 
-                            <Box>
-                                <NavLink to="/recent">
-                                    <VStack>
-                                        <Text fontSize="16px" paddingRight="5px"
-                                        >
-                                            &lt;recent&gt;
-
-
-                                        </Text>
-
-                                    </VStack>
-                                </NavLink>
-                            </Box>
-
 
                             <Box>
-                                <NavLink to="/leaderboard/students">&lt;student leaderboard&gt;</NavLink>
+                                <NavLink to="/leaderboard/students">leaderboard</NavLink>
                             </Box>
 
-                            <Box>
-                                <Button>
-                                    <NavLink to="/login">login</NavLink>
-                                </Button>
-                            </Box>
-                            <Box>
-                                <Button>
-                                    <NavLink to="/create">create profile</NavLink>
-                                </Button>
-                            </Box>
+                            {!auth.currentUser ? (
+                                    <Box>
+                                        <Button>
+                                            <NavLink to="/login">login</NavLink>
+                                        </Button>
+                                    </Box>
+                                )
+                                :
+                                (
+                                    <Box>
+                                        <Button>
+                                            <NavLink to="/create">create profile</NavLink>
+                                        </Button>
+                                    </Box>
+                                )}
 
                         </HStack>
                     </Box>

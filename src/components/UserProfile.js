@@ -34,7 +34,7 @@ export default function UserProfile({thisUser}) {
         <Box _hover={{}} bg={'transparent'} w={'50%'} h={'600px'}>
             <Center pt={50}>
                 <VStack fontSize={'18px'} alignText={''}>
-                    <Text fontSize={'24px'}>
+                    <Text fontSize={'24px'} fontWeight={800}>
                         {convertGrade(thisUser.grade)}
                     </Text>
                     <VStack>

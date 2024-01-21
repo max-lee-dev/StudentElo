@@ -21,7 +21,7 @@ export default function ActivityCard({name, role, description}) {
             transition: "all 0.2s ease-in-out",
             cursor: 'pointer',
 
-        }} bg={'#F8EDFF'} w={'400px'} h={'60%'} borderRadius={10}>
+        }} bg={'brand.100'} w={'400px'} h={'60%'} borderRadius={10}>
             <Center pt={0} width={'100%'} p={2}>
                 <VStack fontSize={'18px'} width={'100%'}>
                     <Text fontSize={'24px'} width={'100%'} fontWeight={600}>

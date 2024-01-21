@@ -84,7 +84,7 @@ export default function Create({user}) {
 
 
     return (
-        <Box color={'brand.900'}>
+        <Box color={'brand.900'} pt={50}>
             <Center>
                 <Box width={'50%'}>
 
