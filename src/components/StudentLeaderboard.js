@@ -46,7 +46,7 @@ export default function StudentLeaderboard() {
                 <VStack width={'100%'}>
                     <Box width={'70%'} bg={'brand.100'} borderRadius={3} p={2}>
                         <HStack fontWeight={800}>
-                            <Text width={'20%'}>Rank</Text>
+                            <Text width={'20%'}>Elo</Text>
                             <Text width={'20%'}>Grade</Text>
                             <Text width={'20%'}>GPA</Text>
                             <Text width={'20%'}>APs</Text>

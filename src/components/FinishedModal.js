@@ -32,13 +32,13 @@ export default function FinishedModal({isOpen, onClose, oldElo1, oldElo2, newElo
                 <ModalBody>
                     <HStack>
                         <Text>
-                            Student 1 rating:
+                            Student 1 elo:
                         </Text>
                         <Text color={student1win ? 'green' : 'red'}>{oldElo1} -> {newElo1}</Text>
                     </HStack>
                     <HStack>
                         <Text>
-                            Student 2 rating:
+                            Student 2 elo:
                         </Text>
                         <Text color={student2win ? 'green' : 'red'}>{oldElo2} -> {newElo2}</Text>
                     </HStack>

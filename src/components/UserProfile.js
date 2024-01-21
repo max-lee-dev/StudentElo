@@ -5,6 +5,7 @@ import {
     Button,
     Center,
     Text,
+    Divider,
     SimpleGrid,
     VStack,
     HStack,
@@ -35,7 +36,7 @@ export default function UserProfile({thisUser}) {
         <Box _hover={{}} bg={'transparent'} w={'50%'} h={'600px'}>
             <Center pt={50}>
                 <VStack fontSize={'18px'} alignText={''}>
-                    <Text fontSize={'28px'} fontWeight={800}>
+                    <Text fontSize={'40px'} fontWeight={800}>
                         {convertGrade(thisUser.grade)}
                     </Text>
                     <Center>
@@ -44,13 +45,19 @@ export default function UserProfile({thisUser}) {
                                 <Text>
                                     GPA: {thisUser.GPA}
                                 </Text>
+                                <Divider orientation="vertical" borderColor={'brand.900'}
+                                         borderWidth={'2px'}/>
 
                                 <Text>
                                     SAT: {thisUser.SAT}
                                 </Text>
+                                <Divider orientation="vertical" borderColor={'brand.900'}
+                                         borderWidth={'2px'}/>
                                 <Text>
                                     ACT: {thisUser.ACT}
                                 </Text>
+                                <Divider orientation="vertical" borderColor={'brand.900'}
+                                         borderWidth={'2px'}/>
                                 <Text>
                                     APs: {thisUser.APs}
                                 </Text>

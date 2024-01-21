@@ -92,7 +92,7 @@ export default function Home({user}) {
                             </HStack>
 
                         </Box>
-                        <HStack width={'100%'} bg={''} pt={10}>
+                        <HStack width={'100%'} bg={''} mt={-5}>
 
                             <Box width={'50%'}>
                                 <Center>
@@ -111,7 +111,7 @@ export default function Home({user}) {
                                 </Center>
                             </Box>
                         </HStack>
-                      
+
                     </VStack>
                 </Box>
             </Center>
