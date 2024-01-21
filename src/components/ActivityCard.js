@@ -10,7 +10,7 @@ import {
 
 export default function ActivityCard({name, role, description}) {
 
-    if (name === "") {
+    if (name === "" || name === undefined) {
         return;
     }
 
