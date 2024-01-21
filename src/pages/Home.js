@@ -83,39 +83,35 @@ export default function Home({user}) {
                         <Box width={'100%'} color={'brand.900'}>
                             <HStack>
                                 <UserProfile thisUser={user1}/>
+                                <Text fontSize={'40px'} position={'relative'} fontWeight={600}>
+                                    vs
+                                </Text>
                                 <UserProfile thisUser={user2}/>
 
 
                             </HStack>
 
                         </Box>
-                        <HStack width={'100%'} bg={''} spacing={0} pt={10}>
+                        <HStack width={'100%'} bg={''} pt={10}>
 
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button width={'60%'} borderColor={'brand.900'} borderWidth={'2px'}
+                                    <Button fontSize={'20px'} width={400} borderColor={'brand.900'} borderWidth={'2px'}
                                             onClick={() => handleClick(1)}>
-                                        Student 1
+                                        Choose left
                                     </Button>
                                 </Center>
                             </Box>
-                            <Button width={'20%'} onClick={getNewUsers} color={'black'} borderColor={'brand.900'}
-                                    borderWidth={'2px'}
-                                    bg={'brand.100'}
-                                    variant="solid">
-                                draw
-                            </Button>
                             <Box width={'50%'}>
                                 <Center>
-                                    <Button width={'60%'} borderColor={'brand.900'} borderWidth={'2px'}
+                                    <Button fontSize={'20px'} width={400} borderColor={'brand.900'} borderWidth={'2px'}
                                             onClick={() => handleClick(2)}>
-                                        Student 2
+                                        Choose right
                                     </Button>
                                 </Center>
                             </Box>
                         </HStack>
-
-
+                      
                     </VStack>
                 </Box>
             </Center>

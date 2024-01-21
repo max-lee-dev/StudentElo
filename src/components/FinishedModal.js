@@ -3,7 +3,7 @@ import {
     Modal,
     ModalOverlay,
 
-    ModalContent,
+    ModalContent, HStack,
     ModalHeader,
     ModalFooter,
     ModalBody,
@@ -14,15 +14,34 @@ import {
 } from "@chakra-ui/react";
 
 export default function FinishedModal({isOpen, onClose, oldElo1, oldElo2, newElo1, newElo2, isCorrect}) {
+    let student1win = false;
+    let student2win = false;
+    if (newElo1 > oldElo1) {
+        student1win = true;
+    }
+    if (newElo2 > oldElo2) {
+        student2win = true;
+    }
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay/>
             <ModalContent>
-                <ModalHeader>{isCorrect === undefined ? "Correct!" : "Incorrect!"}</ModalHeader>
+                {/*<ModalHeader>{isCorrect === undefined ? "Correct!" : "Incorrect!"}</ModalHeader>*/}
+                <ModalHeader>Results</ModalHeader>
                 <ModalCloseButton/>
                 <ModalBody>
-                    <Text>Player 1 elo: {oldElo1} -> {newElo1}</Text>
-                    <Text>Player 2 elo: {oldElo2} -> {newElo2}</Text>
+                    <HStack>
+                        <Text>
+                            Student 1 rating:
+                        </Text>
+                        <Text color={student1win ? 'green' : 'red'}>{oldElo1} -> {newElo1}</Text>
+                    </HStack>
+                    <HStack>
+                        <Text>
+                            Student 2 rating:
+                        </Text>
+                        <Text color={student2win ? 'green' : 'red'}>{oldElo2} -> {newElo2}</Text>
+                    </HStack>
                 </ModalBody>
 
                 <ModalFooter>

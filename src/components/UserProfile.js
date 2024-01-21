@@ -5,6 +5,7 @@ import {
     Button,
     Center,
     Text,
+    SimpleGrid,
     VStack,
     HStack,
 } from "@chakra-ui/react";
@@ -37,20 +38,23 @@ export default function UserProfile({thisUser}) {
                     <Text fontSize={'24px'} fontWeight={800}>
                         {convertGrade(thisUser.grade)}
                     </Text>
-                    <VStack>
-                        <Text>
-                            GPA: {thisUser.GPA}
-                        </Text>
-                        <Text>
-                            SAT: {thisUser.SAT}
-                        </Text>
-                        <Text>
-                            ACT: {thisUser.ACT}
-                        </Text>
-                        <Text>
-                            APs: {thisUser.APs}
-                        </Text>
-                    </VStack>
+                    <Box>
+                        <SimpleGrid columns={2} spacing={2} fontWeight={600}>
+                            <Text>
+                                GPA: {thisUser.GPA}
+                            </Text>
+                            <Text>
+                                SAT: {thisUser.SAT}
+                            </Text>
+                            <Text>
+                                ACT: {thisUser.ACT}
+                            </Text>
+                            <Text>
+                                APs: {thisUser.APs}
+                            </Text>
+
+                        </SimpleGrid>
+                    </Box>
                     <ActivityCard name={thisUser.EC1Name} role={thisUser.EC1Role}
                                   description={thisUser.EC1Description}/>
                     <ActivityCard name={thisUser.EC2Name} role={thisUser.EC2Role}

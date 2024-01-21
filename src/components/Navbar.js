@@ -55,13 +55,13 @@ export default function Navbar({userData, updatedConfig}) {
                         <HStack>
 
 
-                            <Box>
+                            <Box fontSize={'20px'} pr={10}>
                                 <NavLink to="/leaderboard/students">leaderboard</NavLink>
                             </Box>
 
                             {!auth.currentUser ? (
                                     <Box>
-                                        <Button>
+                                        <Button fontSize={'20px'}>
                                             <NavLink to="/login">login</NavLink>
                                         </Button>
                                     </Box>
@@ -69,7 +69,7 @@ export default function Navbar({userData, updatedConfig}) {
                                 :
                                 (
                                     <Box>
-                                        <Button>
+                                        <Button fontSize={'20px'}>
                                             <NavLink to="/create">create profile</NavLink>
                                         </Button>
                                     </Box>
