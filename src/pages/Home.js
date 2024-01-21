@@ -83,8 +83,8 @@ export default function Home({user}) {
                         <Box width={'100%'} color={'brand.900'}>
                             <HStack>
                                 <UserProfile thisUser={user1}/>
-                                <Text fontSize={'40px'} position={'relative'} fontWeight={600}>
-                                    vs
+                                <Text fontSize={'60px'} position={'relative'} fontWeight={600}>
+                                    VS
                                 </Text>
                                 <UserProfile thisUser={user2}/>
 

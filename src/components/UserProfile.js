@@ -71,6 +71,9 @@ export default function UserProfile({thisUser}) {
                                   description={thisUser.EC2Description}/>
                     <ActivityCard name={thisUser.EC3Name} role={thisUser.EC3Role}
                                   description={thisUser.EC3Description}/>
+                    <ActivityCard name={thisUser.EC4Name} role={thisUser.EC4Role}
+                                  description={thisUser.EC4Description}/>
+                    <ActivityCard name={thisUser.EC5Name} role={thisUser.EC5Role}/>
 
 
                 </VStack>
