@@ -35,26 +35,29 @@ export default function UserProfile({thisUser}) {
         <Box _hover={{}} bg={'transparent'} w={'50%'} h={'600px'}>
             <Center pt={50}>
                 <VStack fontSize={'18px'} alignText={''}>
-                    <Text fontSize={'24px'} fontWeight={800}>
+                    <Text fontSize={'28px'} fontWeight={800}>
                         {convertGrade(thisUser.grade)}
                     </Text>
-                    <Box>
-                        <SimpleGrid columns={2} spacing={2} fontWeight={600}>
-                            <Text>
-                                GPA: {thisUser.GPA}
-                            </Text>
-                            <Text>
-                                SAT: {thisUser.SAT}
-                            </Text>
-                            <Text>
-                                ACT: {thisUser.ACT}
-                            </Text>
-                            <Text>
-                                APs: {thisUser.APs}
-                            </Text>
+                    <Center>
+                        <Box width={'100%'}>
+                            <HStack>
+                                <Text>
+                                    GPA: {thisUser.GPA}
+                                </Text>
 
-                        </SimpleGrid>
-                    </Box>
+                                <Text>
+                                    SAT: {thisUser.SAT}
+                                </Text>
+                                <Text>
+                                    ACT: {thisUser.ACT}
+                                </Text>
+                                <Text>
+                                    APs: {thisUser.APs}
+                                </Text>
+
+                            </HStack>
+                        </Box>
+                    </Center>
                     <ActivityCard name={thisUser.EC1Name} role={thisUser.EC1Role}
                                   description={thisUser.EC1Description}/>
                     <ActivityCard name={thisUser.EC2Name} role={thisUser.EC2Role}
