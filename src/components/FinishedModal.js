@@ -46,7 +46,7 @@ export default function FinishedModal({isOpen, onClose, oldElo1, oldElo2, newElo
 
                 <ModalFooter>
                     <Button colorScheme="blue" mr={3} onClick={onClose}>
-                        Close
+                        Okay
                     </Button>
                 </ModalFooter>
             </ModalContent>
